@@ -35,7 +35,6 @@ public class NoteController {
         return noteService.getAllNoteById(userId);
     }
 
-
     @PutMapping(value = "/edit/{id}")
     private Note updateNote (@RequestBody Note note, @PathVariable(name = "id")String _id) {
 
