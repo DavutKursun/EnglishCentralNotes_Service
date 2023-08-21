@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Note {
     @Id
     private String id;
+
+    private String userId;
     private boolean isChangeable;
     private String title;
     private String bodyText;

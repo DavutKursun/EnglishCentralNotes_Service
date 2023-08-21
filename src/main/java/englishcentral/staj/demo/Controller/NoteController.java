@@ -5,6 +5,9 @@ import englishcentral.staj.demo.Service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("api/note")
@@ -26,6 +29,12 @@ public class NoteController {
     public Iterable<Note> getAllNotes (){
         return noteService.getAll();
     }
+
+    @GetMapping(value = "/getAllNotesById/{userId}")
+    public List<Note> getAllNotes (@PathVariable(name = "userId")String userId){
+        return noteService.getAllNoteById(userId);
+    }
+
 
     @PutMapping(value = "/edit/{id}")
     private Note updateNote (@RequestBody Note note, @PathVariable(name = "id")String _id) {
