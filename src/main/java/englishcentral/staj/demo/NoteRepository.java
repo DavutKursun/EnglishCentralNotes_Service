@@ -10,4 +10,6 @@ public interface NoteRepository extends MongoRepository<Note,String> {
     @Query("{'userId' : ?0}")
     List<Note> findByUserId(String userId);
 
+
+    Long deleteNoteByUserId(String userId);
 }

@@ -48,6 +48,11 @@ public class NoteController {
         noteService.deleteNote(_id);
     }
 
+    @DeleteMapping(value = "/deleteUsersAllNote/{userId}")
+    private void deleteUsersAllNote(@PathVariable("userId") String userId){
+        noteService.deleteUsersAllNotes(userId);
+    }
+
     @DeleteMapping(value = "/deleteAll")
     private void deleteAllNote () {
         noteService.deleteAllNote();
