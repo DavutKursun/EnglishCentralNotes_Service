@@ -18,7 +18,6 @@ public class NoteService {
     }
 
 
-
     public Iterable<Note> getAll() {
         return this.noteRepository.findAll();
     }
@@ -37,6 +36,6 @@ public class NoteService {
         return this.noteRepository.findByUserId(userId);
     }
     public void deleteUsersAllNotes(String user){
-        Long removedNotes = this.noteRepository.deleteNoteByUserId(user);
+        this.noteRepository.deleteNoteByUserId(user);
     }
 }
